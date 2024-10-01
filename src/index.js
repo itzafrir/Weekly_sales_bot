@@ -115,7 +115,19 @@ exports.handler = async (event, context) => {
 
     // Attempt to extract chat ID from the event body
     chatID = body?.message?.chat?.id;
+    
+    const messageText = body?.message?.text?.trim(); // Extract the message text and remove any extra whitespace
 
+    // Handle specific commands: /start and /help
+    if (messageText === '/start' || messageText === '/help') {
+      const startMessage = `Hello! 👋\nWelcome to the bot. Use /help to see what commands I can respond to.`;
+      await sendTelegramMessage(chatID, startMessage);
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: 'Start message sent.' }),
+      };
+    }
+    
     if (!chatID) {
       // If no chat ID is found, use the fallback TELEGRAM_CHAT_ID environment variable
       const fallbackChatID = process.env.TELEGRAM_CHAT_ID;
