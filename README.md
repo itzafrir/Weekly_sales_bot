@@ -16,7 +16,7 @@ If you wish to deploy this code as an AWS Lambda function, you need to:
 1. Create a new Lambda function in the AWS Management Console.
 2. Upload the code along with the necessary dependencies as a `.zip` file.
 3. Configure the required environment variables.
-4. If you would like to use a api gateway trigger - see [Setting Up a Webhook with AWS API Gateway and Postman] (#Setting Up a Webhook with AWS API Gateway and Postman) section bellow.
+4. If you would like to use a api gateway trigger - see [Setting Up a Webhook with AWS API Gateway and Postman](#Setting Up a Webhook with AWS API Gateway and Postman) section bellow.
 
 For detailed instructions, see the [Setup](#setup) section below.
 
