@@ -83,6 +83,30 @@ node index.js
 - Click Test to run the function and check the logs for results.
 
 
+## Setting Up a Webhook with AWS API Gateway and Postman
+
+You can configure your Telegram bot to receive messages automatically by setting up a webhook using AWS API Gateway and Postman.
+
+### Step 1: Create an API Gateway Endpoint
+1. Go to the [API Gateway console](https://console.aws.amazon.com/apigateway).
+2. Create a new REST API.
+3. Add a new resource and method (`POST`).
+4. Integrate it with a Lambda function that handles incoming messages or directly forwards them to your bot endpoint.
+
+### Step 2: Deploy the API
+1. Deploy the API to a new or existing stage.
+2. Note the invoke URL, e.g., `https://{api-id}.execute-api.{region}.amazonaws.com/{stage}/{resource}`.
+
+### Step 3: Set the Webhook URL Using Postman
+1. Open Postman and create a new `POST` request.
+2. Set the URL to: https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook
+3. In the request body, select **x-www-form-urlencoded** and add:
+- `url`: `https://{api-id}.execute-api.{region}.amazonaws.com/{stage}/{resource}`
+4. Send the request.
+
+### Step 4: Verify the Webhook
+Check the response from Telegram to confirm the webhook is set successfully. Your bot should now receive updates through the API Gateway endpoint.
+
 ## Troubleshooting
 
 - **Check the CloudWatch Logs** for any error messages or issues.
