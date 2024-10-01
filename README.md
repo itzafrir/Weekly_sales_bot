@@ -1,6 +1,7 @@
 # Weekly_sales_bot
 This repository contains a JavaScript file that scrapes content from a specified webpage using Puppeteer, formats the scraped content, and sends it to a Telegram chat using the Telegram Bot API. The code is designed to be used as an AWS Lambda function, this repository **is not** a pre-configured AWS Lambda deployment package. Instead, it provides the source code that can be used to create an AWS Lambda function or be integrated into other JavaScript environments.
 
+You are welcome to use this bot: https://t.me/the_iraqui_bot
 ## How It Works
 
 1. **Scrape Content**: The function uses Puppeteer to scrape content from the target URL specified in the environment variables.
